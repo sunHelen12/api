@@ -13,6 +13,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.endereco.Endereco;
+import med.voll.api.medico.records.DadosAtualizacaoMedico;
+import med.voll.api.medico.records.DadosCadastroMedico;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -32,8 +34,10 @@ public class Medico {
     private Especialidade especialidade;
     @Embedded //campos dessa classe farão parte da mesma tabela
     private Endereco endereco;
+    private Boolean ativo;
 
     public Medico(DadosCadastroMedico dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.crm = dados.crm();
         this.email = dados.email();
@@ -52,5 +56,9 @@ public class Medico {
         if (dados.endereco() != null) {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
