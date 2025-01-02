@@ -43,7 +43,7 @@ public class MedicoController {
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
     }
 
-    @GetMapping
+    @GetMapping    
     public ResponseEntity <Page<DadosListagemMedicos>> listarMedicos(@PageableDefault(size = 10, sort = {"nome"})Pageable paginacao){
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedicos::new);
                                     //converter dados da C. Medico para DadosListagemMedicos DTO 
