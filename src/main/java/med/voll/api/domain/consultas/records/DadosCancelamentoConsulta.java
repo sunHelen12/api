@@ -3,14 +3,10 @@ package med.voll.api.domain.consultas.records;
 import jakarta.validation.constraints.NotNull;
 import med.voll.api.domain.consultas.MotivoCancelamento;
 
-public record DadosCancelamentoConsulta(@NotNull
-                                        Long id_consulta,
-                                        @NotNull
-                                        MotivoCancelamento motivo) {
+public record DadosCancelamentoConsulta(
+        @NotNull
+        Long idConsulta,
 
-    public Long idConsulta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'idConsulta'");
-    }
-
+        @NotNull
+        MotivoCancelamento motivo) {
 }
