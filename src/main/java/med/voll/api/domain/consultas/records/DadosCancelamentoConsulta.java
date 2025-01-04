@@ -8,4 +8,9 @@ public record DadosCancelamentoConsulta(@NotNull
                                         @NotNull
                                         MotivoCancelamento motivo) {
 
+    public Long idConsulta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'idConsulta'");
+    }
+
 }

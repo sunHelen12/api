@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import med.voll.api.domain.consultas.records.DadosAgendamentoConsulta;
-import med.voll.api.domain.consultas.records.DadosCancelamentoConsulta;
 import med.voll.api.domain.consultas.repository.ConsultaRepository;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.repository.MedicoRepository;
@@ -32,7 +31,7 @@ public class AgendaDeConsultas {
         
         if (dados.idMedico() != null && !medicoRepository.existsById(dados.idMedico())) {
             throw new ValidacaoException("ID do médico informado não existe!");
-        }        
+        }             
 
         var medico =  escolherMedico(dados);
         var paciente = pacienteRepository.getReferenceById(dados.idPaciente());
