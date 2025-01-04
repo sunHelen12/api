@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import med.voll.api.domain.consultas.records.DadosAgendamentoConsulta;
 import med.voll.api.infra.exception.ValidacaoException;
 
-@Component("")
+@Component("ValidadorHorarioAntecedenciaAgendamento")
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoConsulta{
    
     public void validar(DadosAgendamentoConsulta dados){
